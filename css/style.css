@@ -381,6 +381,39 @@ main { position: relative; z-index: 1; }
     linear-gradient(180deg, rgba(250, 238, 218, .5) 0%, rgba(250, 238, 218, 0) 16%);
 }
 
+/* 첫 화면 하단 가운데: SCROLL + 아래 방향 꺾쇠 두 개 (살짝 튀어오름) */
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--chrome-bottom) - 18px);
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  margin-left: -40px;
+  width: 80px;
+  color: #fbf6ec;
+  text-shadow: 0 1px 8px rgba(20, 16, 12, .45);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: .3em;
+  text-indent: .3em;
+  text-transform: uppercase;
+}
+.scroll-cue svg { width: 18px; height: 20px; overflow: visible; filter: drop-shadow(0 1px 4px rgba(20, 16, 12, .45)); }
+.scroll-cue span, .scroll-cue path { animation: cue-bounce 1.8s cubic-bezier(.45, 0, .35, 1) infinite; }
+.scroll-cue span { display: block; }
+.scroll-cue path { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+/* 글자 → 첫 번째 꺾쇠 → 두 번째 꺾쇠 순으로 물결치듯 */
+.scroll-cue .c1 { animation-delay: .12s; }
+.scroll-cue .c2 { animation-delay: .24s; }
+.scroll-cue:hover { color: #fff; }
+@keyframes cue-bounce {
+  0%, 100% { transform: translateY(0); opacity: .55; }
+  45% { transform: translateY(5px); opacity: 1; }
+  65% { transform: translateY(1px); }
+}
+
 /* 최초 진입: 텍스트 순차 fade-up → 화면 시간차 등장 */
 .intro { opacity: 0; transform: translateY(12px); transition: opacity .9s cubic-bezier(.2, .7, .2, 1), transform .9s cubic-bezier(.2, .7, .2, 1); }
 .hero__frame { opacity: 0; transition: opacity 1.4s ease; }
@@ -392,6 +425,7 @@ main { position: relative; z-index: 1; }
 .is-ready .hero__en { transition-delay: .42s; }
 .is-ready .hero__frame { transition-delay: .3s; }
 .is-ready .hero__meta { transition-delay: .55s; }
+.is-ready .scroll-cue { transition-delay: .8s; }
 
 /* ==========================================================
    01 PROJECT OVERVIEW
@@ -1349,6 +1383,7 @@ img.screen { object-fit: cover; object-position: top center; border: 1px solid v
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
+  .scroll-cue span, .scroll-cue path { animation: none; opacity: 1; }
   .intro, .hero__frame, .rv, .pb__flow li::after, .cj__journey > li, .cj__node::after, .rx__pin, .lr__journey li::after { opacity: 1; transform: none; transition: none; }
   .rx__pin { transform: translate(-50%, -50%); }
   .rx__viewer.rv, .rx__viewer.is-in:hover { transform: none; transition: none; }
@@ -1389,6 +1424,7 @@ img.screen { object-fit: cover; object-position: top center; border: 1px solid v
   .hero__text { margin-top: 0; }
   .hero__meta { grid-column: 1; grid-row: auto; }
   .hero__frame { display: none; }
+  .scroll-cue { display: none; }
   .hero__veil { background: linear-gradient(180deg, rgba(250, 240, 224, .95) 0%, rgba(249, 236, 214, .88) 45%, rgba(240, 204, 160, .3) 100%); }
   .hero__desc { white-space: normal; }
 
