@@ -5,414 +5,746 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>토리동화 · 한국형 AI 동화책 제작 스튜디오</title>
   <meta name="description" content="10팀 토리동화 — 아이의 작은 상상과 소중한 하루를 담아 세상에 하나뿐인 한국 동화를 만듭니다." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- 좌측 상단 고정 진행 표시 -->
-  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+  <!-- 고정 헤더 -->
+  <header class="chrome chrome--top">
+    <a href="#s1" class="brand">
+      <span class="brand__name">토리동화</span>
+      <span class="brand__en">Korean AI Storybook Studio</span>
+    </a>
+    <p class="chrome__meta">UX/UI Portfolio</p>
+  </header>
 
-  <nav class="dots" aria-label="슬라이드 이동"></nav>
+  <!-- 고정 푸터: 현재 섹션 + 진행 -->
+  <footer class="chrome chrome--bottom">
+    <nav class="chrome__section" aria-label="페이지 목록">
+      <button type="button" class="chrome__trigger" aria-haspopup="true"><span class="chrome__idx">00</span><span class="chrome__title"></span></button>
+      <ol class="chrome__menu"></ol>
+    </nav>
+    <div class="chrome__progress" aria-hidden="true">
+      <span class="chrome__count"><b class="chrome__cur">01</b> / <span class="chrome__total">14</span></span>
+      <span class="chrome__track"><i class="chrome__bar"></i></span>
+    </div>
+  </footer>
+
+  <!-- 첫 페이지로 이동 (표지 이후에 표시) -->
+  <button type="button" class="to-top" aria-label="첫 페이지로 이동" title="첫 페이지로">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M3.5 7.5L8 3l4.5 4.5" /></svg>
+  </button>
 
   <main>
 
-    <!-- 01 / 14 — 표지 -->
-    <section class="slide slide--hero" id="s1" data-title="표지">
-      <div class="hero__bg img-slot" aria-label="배경 이미지 자리"></div>
-      <div class="hero__dim"></div>
-
-      <div class="hero__brand">
-        <span class="logo logo--xl logo--brand"><svg viewBox="0 0 24 24"><use href="#i-book"/></svg></span>
-        <span>한국형 AI 동화책 제작 스튜디오</span>
+    <!-- 01 표지 -->
+    <section class="slide slide--hero" id="s1" data-idx="00" data-title="">
+      <div class="hero__bg">
+        <img src="images/hero-illustration.png" alt="한옥 지붕 위에서 풍등이 떠오르는 밤하늘을 바라보는 한복 입은 아이와 해태 수채화 일러스트" />
       </div>
-
-      <div class="hero__content">
+      <span class="hero__frame" aria-hidden="true"></span>
+      <span class="hero__veil" aria-hidden="true"></span>
+      <div class="wrap hero">
         <div class="hero__text">
-          <p class="hero__eyebrow">상상이 이야기가 되는 곳</p>
-          <h1 class="hero__title">토리동화</h1>
-          <p class="hero__desc">아이의 작은 상상과 소중한 하루를 담아<br />세상에 하나뿐인 한국 동화를 만듭니다.</p>
+          <p class="hero__eyebrow intro">상상이 이야기가 되는 곳</p>
+          <h1 class="hero__name intro">토리동화</h1>
+          <p class="hero__message intro">아이와 함께 만들어가는<br />세상에 하나뿐인 이야기</p>
+          <p class="hero__desc intro">2~9세 아이와 부모를 위한 AI 맞춤 동화 제작 서비스</p>
+          <p class="hero__en intro" lang="en">AI Personalized Story Platform for Kids &amp; Parents</p>
         </div>
 
-        <div class="hero__cards">
-          <article class="hero-card">
-            <div class="hero-card__img img-slot"></div>
-            <div class="hero-card__body">
-              <h3>선택형 동화 만들기</h3>
-              <p>주제, 주인공, 배경을 직접 골라<br />토리가 이야기를 완성해요.</p>
-              <span class="hero-card__btn hero-card__btn--pink">체험해보기</span>
-            </div>
-          </article>
-          <article class="hero-card">
-            <div class="hero-card__img img-slot"></div>
-            <div class="hero-card__body">
-              <h3>대화형 동화 만들기</h3>
-              <p>아이와의 대화 속에서<br />나만의 동화가 탄생해요.</p>
-              <span class="hero-card__btn hero-card__btn--gold">체험해보기</span>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="hero__foot">
-        <p class="hero__team"><strong>10팀</strong><i>·</i>한승우, 박정우, 이수현</p>
-        <a href="#s2" class="hero__scroll">SCROLL<svg viewBox="0 0 24 24"><path d="M6 6l6 6 6-6M6 12l6 6 6-6"/></svg></a>
-        <p class="hero__presenter">발표자 한승우</p>
+        <ul class="hero__meta intro" lang="en">
+          <li>AI Service</li>
+          <li>UX/UI Design · Vibe Coding · Web Development</li>
+          <li>Team Project · 2026</li>
+        </ul>
       </div>
     </section>
 
-    <!-- 02 / 14 — 문제 정의 -->
-    <section class="slide" id="s2" data-title="문제 정의">
-      <header class="slide__head">
-        <p class="label">01 <b></b> 문제 정의</p>
-        <h2 class="title">우리 문화가 담긴 동화책이 없습니다.</h2>
-        <p class="sub">공감에서 시작된 아이디어</p>
-      </header>
-      <div class="slide__body grid-quote">
-        <blockquote class="quote">
-          <span class="quote__mark">"</span>
-          <p>창덕궁·경복궁·한복 같은 우리 문화가 담긴 동화책을 읽히고 싶지만, 막상 찾아보면 그런 책이 거의 없어요.</p>
-          <span class="quote__mark quote__mark--end">"</span>
-          <cite>5살 아이를 키우는 부모의 이야기</cite>
-        </blockquote>
-        <div class="stack-list">
-          <div>
-            <h4>바라는 것 — 자연스러운 문화 교육</h4>
-            <p>이야기를 읽으며 아이가 우리 문화를 스스로 익히기를 바랍니다.</p>
-          </div>
-          <div>
-            <h4>하지만 현실은</h4>
-            <p>한국 소재가 담긴 동화 시리즈는 시중에 거의 존재하지 않습니다.</p>
+    <!-- 01 PROJECT OVERVIEW -->
+    <section class="slide slide--overview" id="overview" data-idx="01" data-title="개요">
+      <div class="wrap ov">
+
+        <!-- TOP: 라벨 · 헤드라인 · 설명 -->
+        <div class="ov__intro">
+          <p class="eyebrow rv"><span>01</span>Project Overview</p>
+          <h2 class="ov__headline rv" style="--d:.08s">AI로 만드는 이야기,<br />내 아이의 한국형 독서 경험</h2>
+          <p class="ov__desc rv" style="--d:.16s">
+            토리동화는 2~9세 자녀를 둔 부모를 위한 <strong>AI 맞춤 동화</strong> 제작 서비스입니다.
+            동화 생성 후, <strong>독후활동과 독서 기록</strong>까지 하나의 경험으로 이어지도록 설계했습니다.
+          </p>
+        </div>
+
+        <!-- MIDDLE: 실제 서비스 UI (입력 → 이야기 → 기록) -->
+        <div class="ov__visual rv" style="--d:.3s" aria-label="토리동화 핵심 경험 화면">
+          <div class="ov__stage">
+          <figure class="ov-shot ov-shot--input" data-depth="0.04">
+            <img src="images/screen-create-input.png" alt="동화 생성 입력 화면 — 주인공 이름, 나이, 주제, 한국형 모티브 선택" loading="lazy" />
+            <figcaption><span class="n">01</span>Personalize</figcaption>
+          </figure>
+          <figure class="ov-shot ov-shot--viewer" data-depth="-0.02">
+            <img src="images/screen-viewer.png" alt="완성된 Story Viewer — 민준이의 용기있는 한복 여행" loading="lazy" />
+            <figcaption><span class="n">03</span>Read — Story Viewer</figcaption>
+          </figure>
+          <figure class="ov-shot ov-shot--record" data-depth="-0.05">
+            <img src="images/screen-parent.png" alt="독서 기록 — 부모 대시보드 내 아이 모아보기 화면" loading="lazy" />
+            <figcaption><span class="n">05</span>Record</figcaption>
+          </figure>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- 03 / 14 — 타겟 페르소나 -->
-    <section class="slide" id="s3" data-title="타겟 페르소나">
-      <header class="slide__head">
-        <p class="label">02 <b></b> 타겟 페르소나</p>
-        <h2 class="title">타겟 페르소나, 박세화 님</h2>
-        <p class="sub">토리동화가 가장 먼저 만족시켜야 할 사용자</p>
-      </header>
-      <div class="slide__body grid-persona">
-        <div class="persona card card--line">
-          <div class="persona__head">
-            <div class="persona__avatar img-slot img-slot--round"><span>프로필</span></div>
-            <div>
-              <h3>박세화</h3>
-              <p>30대 맞벌이 직장인 · 6세 자녀 양육 중</p>
+        <!-- MIDDLE: Core Experience Flow -->
+        <ol class="ov-flow" aria-label="토리동화 핵심 경험 흐름">
+          <li class="rv" style="--d:.2s"><span class="n">01</span><b>Personalize</b><span>아이 정보 입력</span></li>
+          <li class="rv" style="--d:.26s"><span class="n">02</span><b>Create</b><span>AI 맞춤 동화 생성</span></li>
+          <li class="rv" style="--d:.32s"><span class="n">03</span><b>Read</b><span>아이와 함께 읽기</span></li>
+          <li class="rv" style="--d:.38s"><span class="n">04</span><b>Activity</b><span>독후활동</span></li>
+          <li class="rv" style="--d:.44s"><span class="n">05</span><b>Record</b><span>독서 기록</span></li>
+        </ol>
+
+        <!-- BOTTOM: Project Information + Live Website -->
+        <div class="ov-info rv" style="--d:.1s">
+          <dl class="ov-info__grid">
+            <div class="ov-info__project"><dt>Project</dt><dd>토리동화<small>한국형 AI 동화책 제작 스튜디오</small></dd></div>
+            <div><dt>Type</dt><dd>Team Project</dd></div>
+            <div><dt>Period</dt><dd>2026.06</dd></div>
+            <div><dt>Output</dt><dd>Responsive Web Service</dd></div>
+            <div class="ov-info__role"><dt>Role</dt><dd>UX/UI Design<br />Planning<br />Vibe Coding</dd></div>
+            <div class="ov-info__contrib">
+              <dt>Contribution</dt>
+              <dd>
+                <ul>
+                  <li><span>Planning</span><em>50%</em></li>
+                  <li><span>Design</span><em>100%</em></li>
+                  <li><span>Development</span><em>50%</em></li>
+                </ul>
+              </dd>
             </div>
-          </div>
-          <dl class="persona__info">
-            <dt>좋아하는 것</dt><dd>퇴근 후 유튜브 보기, 주말에 아이와 나들이, 맘카페 눈팅</dd>
-            <dt>성격</dt><dd>교육열 높고 꼼꼼함. 아이에게 좋은 것만 주고 싶은 열정적인 부모</dd>
-            <dt>최근 고민</dt><dd>퇴근 후 지쳐 매일 책 읽어주기 힘들고, 한국 문화 동화책은 찾기가 너무 어려움</dd>
-            <dt>자주 쓰는 앱</dt><dd>카카오톡, 네이버, 육아 커뮤니티(맘카페), 전자책 앱</dd>
-            <dt>하루 루틴</dt><dd>출퇴근 중 육아 정보 검색 · 저녁엔 동화책 한 권 읽기 루틴 유지 노력</dd>
+            <div class="ov-info__tools">
+              <dt>Tools</dt>
+              <dd>Figma · Claude · VS Code<br />React · TypeScript · Vite<br />Tailwind CSS · Supabase · Solar API · GitHub</dd>
+            </div>
           </dl>
+          <a class="live-link" href="https://jeongwoo-pjw.github.io/tori-story/" target="_blank" rel="noopener">토리동화 서비스 보기 <i aria-hidden="true">↗</i></a>
         </div>
-        <div class="pains">
-          <p class="pains__label">핵심 페인포인트</p>
-          <ol>
-            <li><span class="num">1</span>창덕궁, 경복궁, 한복 등 한국 문화·역사가 담긴 동화를 찾기가 너무 어렵다</li>
-            <li><span class="num">2</span>내 아이 이름·나이·관심사에 맞춘 맞춤 동화는 비용이 높고 접근이 어렵다</li>
-            <li><span class="num">3</span>동화를 읽고 나서 아이가 무엇을 느꼈는지, 이해했는지 알 방법이 없다 — 독후활동 연계 없음</li>
+
+      </div>
+    </section>
+
+    <!-- 02 BACKGROUND -->
+    <section class="slide slide--fit" id="s2" data-idx="02" data-title="배경">
+      <div class="wrap bp">
+
+        <header class="bp__head rv">
+          <p class="eyebrow"><span>02</span>Background</p>
+          <h2 class="bp__title">공감에서 시작된 아이디어</h2>
+        </header>
+
+        <div class="bp__main">
+          <!-- 실제 부모의 고민 -->
+          <figure class="bp__voice rv" style="--d:.12s">
+            <figcaption>5살 아이를 키우는 부모의 이야기</figcaption>
+            <blockquote>“창덕궁·경복궁·한복 같은 우리 문화가 담긴 동화책을 읽히고 싶지만,<br />막상 찾아보면 그런 책이 거의 없어요.”</blockquote>
+          </figure>
+
+          <!-- 부모가 원하는 경험 → 현실에서 발견한 문제 -->
+          <div class="bp__rows">
+            <div class="bp__row rv" style="--d:.22s">
+              <p class="bp__meta"><span class="bp__no">01</span>바라는 것</p>
+              <h3>자연스러운 문화 교육</h3>
+              <p>이야기를 읽으며 아이가<br />우리 문화를 자연스럽게 익히기를 바랍니다.</p>
+            </div>
+            <div class="bp__row rv" style="--d:.3s">
+              <p class="bp__meta"><span class="bp__no">02</span>하지만 현실은</p>
+              <h3>우리 문화가 담긴 동화의 부족</h3>
+              <p>아이의 눈높이에 맞는<br />한국 소재의 동화를 지속적으로 접하기 어렵습니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 아이디어 -->
+        <div class="bp__idea rv" style="--d:.4s">
+          <p class="kicker">Idea</p>
+          <p class="bp__statement"><em>우리 문화</em>를 자연스럽게 경험할 수 있는<br />아이 맞춤 동화가 필요했습니다.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 03 PROBLEM -->
+    <section class="slide slide--fit slide--pb" id="problem" data-idx="03" data-title="문제점">
+      <div class="wrap pb">
+
+        <header class="pb__head">
+          <div class="pb__lead rv">
+            <p class="eyebrow"><span>03</span>Problem</p>
+            <h2 class="pb__title">동화 생성에서,<br />독서 경험으로</h2>
+          </div>
+          <div class="pb__ask rv" style="--d:.1s">
+            <p class="pb__question">“아이에게 맞는 이야기를<br />만들어주는 것만으로 충분할까?”</p>
+            <p class="pb__desc">맞춤 동화를 만드는 것에서 끝나지 않고, 아이와 부모의 독서 경험이 계속 이어지기 위해 필요한 경험을 다시 살펴보았습니다.</p>
+          </div>
+        </header>
+
+        <div class="pb__found">
+          <p class="kicker rv" style="--d:.16s">What we found</p>
+          <ol class="pb__list">
+            <li class="rv" style="--d:.2s">
+              <span class="pb__no">01</span>
+              <h3>개인화의 한계</h3>
+              <p>아이의 나이와 관심사뿐 아니라 한국적인 소재와 취향까지 반영할 수 있는 맞춤 경험이 필요했습니다.</p>
+            </li>
+            <li class="rv" style="--d:.28s">
+              <span class="pb__no">02</span>
+              <h3>생성 이후 경험의 단절</h3>
+              <p>동화를 만드는 것에서 끝나지 않고, 읽고 생각하고 표현하는 경험까지 자연스럽게 이어질 필요가 있었습니다.</p>
+            </li>
+            <li class="rv" style="--d:.36s">
+              <span class="pb__no">03</span>
+              <h3>부모 관점의 기록 부족</h3>
+              <p>부모가 아이가 읽은 이야기와 활동을 지속적으로 확인하고 기록할 수 있는 경험이 필요했습니다.</p>
+            </li>
+          </ol>
+          <p class="pb__bridge rv" style="--d:.44s">그래서 우리는 동화를 ‘만드는 순간’이 아니라 ‘읽은 이후까지 이어지는 경험’을 설계했습니다.</p>
+        </div>
+
+        <div class="pb__direction">
+          <div class="pb__final rv" style="--d:.1s">
+            <p class="kicker">Our direction</p>
+            <p class="pb__message"><span class="pb__not">“동화 생성”이 아닌</span><br /><strong>“독서 경험 전체”</strong>를 설계합니다.</p>
+          </div>
+          <ol class="pb__flow rv" style="--d:.2s" aria-label="토리동화 서비스 방향">
+            <li><p><b>생성</b><span>Create</span></p></li>
+            <li><p><b>감상</b><span>Read</span></p></li>
+            <li><p><b>활동</b><span>Activity</span></p></li>
+            <li><p><b>기록</b><span>Record</span></p></li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 03 타겟 페르소나 -->
+    <section class="slide" id="s3" data-idx="04" data-title="타겟 페르소나">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow"><span>04</span>Persona — 타겟 페르소나</p>
+          <h2 class="title">함께 만들고 기록할 수 있는 부모와 아이</h2>
+          <p class="sub">토리동화가 가장 먼저 만족시켜야 할 사용자</p>
+        </header>
+        <div class="body split split--persona">
+          <div class="persona">
+            <div class="persona__id">
+              <h3 class="persona__name">박세화</h3>
+              <p class="persona__role">30대 맞벌이 직장인 · 6세 자녀 양육 중</p>
+            </div>
+            <dl class="facts">
+              <div><dt>좋아하는 것</dt><dd>퇴근 후 유튜브 보기, 주말에 아이와 나들이, 맘카페 눈팅</dd></div>
+              <div><dt>성격</dt><dd>교육열 높고 꼼꼼함. 아이에게 좋은 것만 주고 싶은 열정적인 부모</dd></div>
+              <div><dt>최근 고민</dt><dd>퇴근 후 지쳐 매일 책 읽어주기 힘들고, 한국 문화 동화책은 찾기가 너무 어려움</dd></div>
+              <div><dt>자주 쓰는 앱</dt><dd>카카오톡, 네이버, 육아 커뮤니티(맘카페), 전자책 앱</dd></div>
+              <div><dt>하루 루틴</dt><dd>출퇴근 중 육아 정보 검색 · 저녁엔 동화책 한 권 읽기 루틴 유지 노력</dd></div>
+            </dl>
+          </div>
+          <div class="pains">
+            <p class="kicker">핵심 페인포인트</p>
+            <ol class="numbered">
+              <li><span class="n">01</span><p>창덕궁, 경복궁, 한복 등 한국 문화·역사가 담긴 동화를 찾기가 너무 어렵다</p></li>
+              <li><span class="n">02</span><p>내 아이 이름·나이·관심사에 맞춘 맞춤 동화는 비용이 높고 접근이 어렵다</p></li>
+              <li><span class="n">03</span><p>동화를 읽고 나서 아이가 무엇을 느꼈는지, 이해했는지 알 방법이 없다 — 독후활동 연계 없음</p></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 해결책 -->
+    <section class="slide" id="s4" data-idx="05" data-title="서비스 소개, 해결책">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow"><span>05</span>Solution — 서비스 소개, 해결책</p>
+          <h2 class="title">세 가지 문제, 하나의 해답</h2>
+          <p class="sub">문제를 해결하는 단 하나의 플랫폼</p>
+        </header>
+        <div class="body">
+          <div class="statement">
+            <p class="statement__pre">세 가지 문제를 해결하는</p>
+            <p class="statement__main">한국형 AI 동화 생성 및 독서 관리 플랫폼,<br /><em>토리동화</em></p>
+          </div>
+          <ol class="cols cols--3 answers">
+            <li>
+              <p class="answers__q"><span class="n">01</span>한국 문화 동화가 없다</p>
+              <p class="answers__a">한국 소재 AI 동화 자동 생성</p>
+            </li>
+            <li>
+              <p class="answers__q"><span class="n">02</span>읽고 나면 끝, 연계가 없다</p>
+              <p class="answers__a">놀이마당 + 부모 대시보드</p>
+            </li>
+            <li>
+              <p class="answers__q"><span class="n">03</span>맞춤 동화는 방법이 없다</p>
+              <p class="answers__a">이름·나이·관심사 맞춤 생성</p>
+            </li>
           </ol>
         </div>
       </div>
     </section>
 
-    <!-- 04 / 14 — 서비스 소개, 해결책 -->
-    <section class="slide" id="s4" data-title="해결책">
-      <header class="slide__head">
-        <p class="label">03 <b></b> 서비스 소개, 해결책</p>
-        <h2 class="title">세 가지 문제, 하나의 해답</h2>
-        <p class="sub">문제를 해결하는 단 하나의 플랫폼</p>
-      </header>
-      <div class="slide__body solution">
-        <div class="solution__hero">
-          <p class="solution__pre">세 가지 문제를 해결하는</p>
-          <p class="solution__what">한국형 AI 동화 생성 및 독서 관리 플랫폼</p>
-          <p class="solution__name">
-            <span class="logo logo--xl"><svg viewBox="0 0 24 24"><use href="#i-book"/></svg></span>
-            토리동화
-          </p>
-        </div>
-        <div class="grid-3">
-          <div class="card card--line solve">
-            <p class="solve__problem"><span class="num num--sm">1</span>한국 문화 동화가 없다</p>
-            <p class="solve__answer">한국 소재 AI 동화 자동 생성</p>
+    <!-- 05 서비스명의 의미 -->
+    <section class="slide" id="s5" data-idx="06" data-title="서비스명">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow"><span>06</span>Naming — 서비스명의 의미</p>
+          <h2 class="title">왜 '토리'인가요?</h2>
+          <p class="sub">이름에 담은 마음</p>
+        </header>
+        <div class="body naming">
+          <div class="naming__word">
+            <span class="naming__big">토리</span>
+            <span class="naming__pos">[ 명사 ] 순우리말</span>
           </div>
-          <div class="card card--line solve">
-            <p class="solve__problem"><span class="num num--sm">2</span>읽고 나면 끝, 연계가 없다</p>
-            <p class="solve__answer">놀이마당 + 부모 대시보드</p>
-          </div>
-          <div class="card card--line solve">
-            <p class="solve__problem"><span class="num num--sm">3</span>맞춤 동화는 방법이 없다</p>
-            <p class="solve__answer">이름·나이·관심사 맞춤 생성</p>
+          <div class="naming__mean">
+            <svg class="naming__sprout" viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M32 58V30" />
+              <path d="M32 34c0-9-7-15-18-15 0 9 7 15 18 15z" />
+              <path d="M32 30c0-10 8-17 20-17 0 10-8 17-20 17z" />
+            </svg>
+            <h3>씨앗, 그리고 열매</h3>
+            <p>토리동화는 아이에게 심어주는 <b>첫 이야기</b>이자, 무엇이든 될 수 있는 <b>가능성의 씨앗</b> 같은 동화를 뜻합니다.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 05 / 14 — 서비스명의 의미 -->
-    <section class="slide" id="s5" data-title="서비스명의 의미">
-      <header class="slide__head">
-        <p class="label">04 <b></b> 서비스명의 의미</p>
-        <h2 class="title">왜 '토리'인가요?</h2>
-        <p class="sub">이름에 담은 마음</p>
-      </header>
-      <div class="slide__body naming">
-        <div class="naming__sprout">
-          <svg viewBox="0 0 48 48" aria-hidden="true">
-            <path d="M24 42V24" stroke="#2f9e60" stroke-width="3" stroke-linecap="round"/>
-            <path d="M24 26c0-7-5-11-13-11 0 7 5 11 13 11z" fill="#4cc38a"/>
-            <path d="M24 24c0-8 6-13 15-13 0 8-6 13-15 13z" fill="#2f9e60"/>
-            <circle cx="24" cy="42" r="1.6" fill="#c0703a"/>
-          </svg>
-        </div>
-        <p class="naming__word">토리</p>
-        <p class="naming__pos">[ 명사 ] 순우리말</p>
-        <span class="naming__rule"></span>
-        <h3 class="naming__meaning">씨앗, 그리고 열매</h3>
-        <p class="naming__desc">토리동화는 아이에게 심어주는 <b>첫 이야기</b>이자, 무엇이든 될 수 있는 <b>가능성의 씨앗</b> 같은 동화를 뜻합니다.</p>
-      </div>
-    </section>
-
-    <!-- 06 / 14 — 핵심 기능 -->
-    <section class="slide" id="s6" data-title="핵심 기능">
-      <header class="slide__head">
-        <p class="label">05 <b></b> 핵심 기능 (MVP)</p>
-        <h2 class="title">한국 문화 동화 생성 · 부모 대시보드 · 놀이마당</h2>
-        <p class="sub">토리동화를 움직이는 세 가지 축</p>
-      </header>
-      <div class="slide__body grid-3 grid-3--tall">
-        <article class="card card--line card--shadow feature">
-          <p class="feature__no">01</p>
-          <h3>한국 문화 동화책 생성</h3>
-          <p>이름·나이·한국 소재를 입력하면 AI가 스토리·삽화·TTS 낭독까지 자동 생성해 세상에 하나뿐인 동화책을 완성합니다.</p>
-        </article>
-        <article class="card card--line card--shadow feature">
-          <p class="feature__no">02</p>
-          <h3>부모의 대시보드 관리</h3>
-          <p>아이의 독서 히스토리·감정 패턴·어휘 성장을 한눈에 확인하고, 부모가 독서 경험을 직접 관리합니다.</p>
-        </article>
-        <article class="card card--line card--shadow feature">
-          <p class="feature__no">03</p>
-          <h3>놀이마당</h3>
-          <p>동화를 읽은 후 이해력·감정·어휘를 게임처럼 즐기며 배우는 독후활동 공간으로, 독서가 배움으로 이어집니다.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- 07 / 14 — 주요 화면 ① -->
-    <section class="slide" id="s7" data-title="주요 화면 ①">
-      <header class="slide__head">
-        <p class="label">06 <b></b> 주요 화면</p>
-        <h2 class="title">이름·주제·소재를 고르면 동화가 완성됩니다</h2>
-        <p class="sub"><span class="circled">1</span> 동화책 입력 · 생성 화면</p>
-      </header>
-      <div class="slide__body grid-3 shots">
-        <figure class="shot">
-          <div class="browser"><div class="browser__bar"><i></i><i></i><i></i></div><div class="browser__view img-slot"></div></div>
-          <figcaption><span class="num">1</span>이름, 나이, 소재 입력</figcaption>
-        </figure>
-        <figure class="shot">
-          <div class="browser"><div class="browser__bar"><i></i><i></i><i></i></div><div class="browser__view img-slot"></div></div>
-          <figcaption><span class="num">2</span>동화 생성 중 화면</figcaption>
-        </figure>
-        <figure class="shot">
-          <div class="browser"><div class="browser__bar"><i></i><i></i><i></i></div><div class="browser__view img-slot"></div></div>
-          <figcaption><span class="num">3</span>생성된 동화책 뷰</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- 08 / 14 — 주요 화면 ② -->
-    <section class="slide" id="s8" data-title="주요 화면 ②">
-      <header class="slide__head">
-        <p class="label">06 <b></b> 주요 화면</p>
-        <h2 class="title">읽은 뒤엔 놀이로 배움을 잇습니다</h2>
-        <p class="sub"><span class="circled">2</span> 놀이마당 화면</p>
-      </header>
-      <div class="slide__body grid-3 shots">
-        <figure class="shot">
-          <div class="browser"><div class="browser__bar"><i></i><i></i><i></i></div><div class="browser__view img-slot"></div></div>
-          <figcaption><span class="num">1</span>이해력 활동</figcaption>
-        </figure>
-        <figure class="shot">
-          <div class="browser"><div class="browser__bar"><i></i><i></i><i></i></div><div class="browser__view img-slot"></div></div>
-          <figcaption><span class="num">2</span>독후활동 4종 탭</figcaption>
-        </figure>
-        <figure class="shot">
-          <div class="browser"><div class="browser__bar"><i></i><i></i><i></i></div><div class="browser__view img-slot"></div></div>
-          <figcaption><span class="num">3</span>답변 입력</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- 09 / 14 — 주요 화면 ③ -->
-    <section class="slide" id="s9" data-title="주요 화면 ③">
-      <header class="slide__head">
-        <p class="label">06 <b></b> 주요 화면</p>
-        <h2 class="title">아이의 독서를 한 화면에서 관리합니다</h2>
-        <p class="sub"><span class="circled">3</span> 부모 대시보드 화면</p>
-      </header>
-      <div class="slide__body grid-dash">
-        <div class="browser browser--big"><div class="browser__bar"><i></i><i></i><i></i></div><div class="browser__view img-slot"></div></div>
-        <ul class="bullets">
-          <li>아이 프로필 카드</li>
-          <li>독서 히스토리</li>
-          <li>독후활동 기록 요약</li>
-          <li>어휘 성장 그래프</li>
-          <li>감정 패턴 다이어그램</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 10 / 14 — 기술 아키텍처 -->
-    <section class="slide" id="s10" data-title="기술 아키텍처">
-      <header class="slide__head">
-        <p class="label">07 <b></b> 기술 아키텍처</p>
-        <h2 class="title">한국어에 특화된 AI 스택</h2>
-        <p class="sub">Frontend · AI · Infrastructure</p>
-      </header>
-      <div class="slide__body stack">
-        <div class="grid-3 grid-3--stack">
-          <article class="card card--line tech">
-            <p class="tech__cat">FRONTEND</p>
-            <h3>React + Vite</h3>
-            <p>태블릿 우선 설계로 반응형을 적용해 아이와 부모 모두 편하게 사용합니다.</p>
-            <div class="tech__icons">
-              <span title="React"><svg viewBox="0 0 24 24" fill="none" stroke="#149eca" stroke-width="1.3"><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/><circle cx="12" cy="12" r="1.8" fill="#149eca" stroke="none"/></svg></span>
-              <span title="Vite"><svg viewBox="0 0 24 24"><path d="M14 2L5 13.5h6L9.5 22 19 9.5h-6.2L14 2z" fill="#646cff"/></svg></span>
-            </div>
-          </article>
-          <article class="card card--line tech">
-            <p class="tech__cat">AI</p>
-            <h3>Solar · GPT Image</h3>
-            <p>Upstage Solar API로 한국어·문화 맥락에 맞는 스토리를 생성하고, GPT Image 1에 캐릭터 시트를 주입해 컷 간 일관성을 유지합니다. (향후 DALL·E 3 전환)</p>
-            <div class="tech__icons">
-              <span title="Upstage Solar"><svg viewBox="0 0 24 24" fill="none" stroke="#f5a524" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3.6" fill="#f5a524" stroke="none"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg></span>
-              <span title="OpenAI"><svg viewBox="0 0 24 24" fill="none" stroke="#10a37f" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3.2l7.6 4.4v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M12 3.2v8.8m0 0l7.6 4.4M12 12l-7.6 4.4"/></svg></span>
-            </div>
-          </article>
-          <article class="card card--line tech">
-            <p class="tech__cat">INFRASTRUCTURE</p>
-            <h3>Pages + Supabase</h3>
-            <p>GitHub Pages로 배포하고, Supabase DB에 삽화 고유 ID를 저장해 추가 컷에서 재활용합니다.</p>
-            <div class="tech__icons">
-              <span title="GitHub"><svg viewBox="0 0 24 24"><path fill="#1b1f24" d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg></span>
-              <span title="Supabase"><svg viewBox="0 0 24 24"><path d="M13.3 21.7c-.5.6-1.5.3-1.5-.5v-7.5H3.6c-1.1 0-1.7-1.3-1-2.1L10.7 2.3c.5-.6 1.5-.3 1.5.5v7.5h8.2c1.1 0 1.7 1.3 1 2.1l-8.1 9.3z" fill="#3ecf8e"/></svg></span>
-            </div>
-          </article>
-        </div>
-        <ol class="pipeline">
-          <li>입력</li>
-          <li>Solar 스토리</li>
-          <li>GPT Image 삽화</li>
-          <li>TTS 낭독</li>
-          <li>Supabase 저장</li>
+    <!-- 06 핵심 기능 -->
+    <section class="slide" id="s6" data-idx="07" data-title="핵심기능(MVP)">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow"><span>07</span>Core Features — 핵심 기능 (MVP)</p>
+          <h2 class="title">한국 문화 동화 생성 · 부모 대시보드 · 놀이마당</h2>
+          <p class="sub">토리동화를 움직이는 세 가지 축</p>
+        </header>
+        <ol class="body cols cols--3 features">
+          <li>
+            <span class="big-n">01</span>
+            <h3>한국 문화 동화책 생성</h3>
+            <p>이름·나이·한국 소재를 입력하면 AI가 스토리·삽화·TTS 낭독까지 자동 생성해 세상에 하나뿐인 동화책을 완성합니다.</p>
+          </li>
+          <li>
+            <span class="big-n">02</span>
+            <h3>부모의 대시보드 관리</h3>
+            <p>아이의 독서 히스토리·감정 패턴·어휘 성장을 한눈에 확인하고, 부모가 독서 경험을 직접 관리합니다.</p>
+          </li>
+          <li>
+            <span class="big-n">03</span>
+            <h3>놀이마당</h3>
+            <p>동화를 읽은 후 이해력·감정·어휘를 게임처럼 즐기며 배우는 독후활동 공간으로, 독서가 배움으로 이어집니다.</p>
+          </li>
         </ol>
       </div>
     </section>
 
-    <!-- 11 / 14 — BM 구조 -->
-    <section class="slide" id="s11" data-title="BM 구조">
-      <header class="slide__head">
-        <p class="label">08 <b></b> BM 구조</p>
-        <h2 class="title">프리미엄 구독 모델</h2>
-        <p class="sub">필요한 만큼, 더 깊게</p>
-      </header>
-      <div class="slide__body grid-2">
-        <article class="card card--line plan">
-          <p class="plan__name">Free</p>
-          <p class="plan__price">₩0</p>
-          <ul class="plan__list plan__list--dot">
-            <li>제한적인 동화 생성</li>
-            <li>정적 삽화 · 기본 TTS</li>
-            <li>5~6페이지 분량 제한</li>
-            <li>책장 최대 3편 저장</li>
-          </ul>
-        </article>
-        <article class="card plan plan--premium">
-          <span class="plan__badge">추천</span>
-          <p class="plan__name">Premium</p>
-          <p class="plan__price">₩9,900 <small>/ 월</small></p>
-          <ul class="plan__list plan__list--check">
-            <li>무제한 동화 생성</li>
-            <li>다양한 TTS 목소리</li>
-            <li>삽화 모션 애니메이션</li>
-            <li>고해상도 PDF 인쇄 · 저장</li>
-            <li>책장 무제한 저장</li>
-          </ul>
-        </article>
+    <!-- 08 기술 아키텍처 -->
+    <section class="slide" id="s10" data-idx="08" data-title="AI 활용">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow"><span>08</span>Architecture — 기술 아키텍처</p>
+          <h2 class="title">한국어에 특화된 AI 스택</h2>
+          <p class="sub">Frontend · AI · Infrastructure</p>
+        </header>
+        <div class="body">
+          <div class="cols cols--3 tech">
+            <article>
+              <p class="kicker">Frontend</p>
+              <h3>React + Vite</h3>
+              <p>태블릿 우선 설계로 반응형을 적용해 아이와 부모 모두 편하게 사용합니다.</p>
+              <p class="tech__tags">React · Vite</p>
+            </article>
+            <article>
+              <p class="kicker">AI</p>
+              <h3>Solar · GPT Image</h3>
+              <p>Upstage Solar API로 한국어·문화 맥락에 맞는 스토리를 생성하고, GPT Image 1에 캐릭터 시트를 주입해 컷 간 일관성을 유지합니다. (향후 DALL·E 3 전환)</p>
+              <p class="tech__tags">Upstage Solar · OpenAI GPT Image 1</p>
+            </article>
+            <article>
+              <p class="kicker">Infrastructure</p>
+              <h3>Pages + Supabase</h3>
+              <p>GitHub Pages로 배포하고, Supabase DB에 삽화 고유 ID를 저장해 추가 컷에서 재활용합니다.</p>
+              <p class="tech__tags">GitHub Pages · Supabase</p>
+            </article>
+          </div>
+          <ol class="line-steps">
+            <li><span>Input</span>입력</li>
+            <li><span>Story</span>Solar 스토리</li>
+            <li><span>Illustration</span>GPT Image 삽화</li>
+            <li><span>Voice</span>TTS 낭독</li>
+            <li><span>Store</span>Supabase 저장</li>
+          </ol>
+        </div>
       </div>
     </section>
 
-    <!-- 12 / 14 — 향후 계획 -->
-    <section class="slide" id="s12" data-title="향후 계획">
-      <header class="slide__head">
-        <p class="label">09 <b></b> 향후 계획</p>
-        <h2 class="title">단기 고도화에서 글로벌 확장까지</h2>
-        <p class="sub">1차 MVP 이후 로드맵</p>
-      </header>
-      <div class="slide__body grid-3 grid-3--tall">
-        <article class="card card--line road">
-          <p class="road__phase road__phase--now">NOW · 1차 MVP</p>
-          <h3>핵심 기능 완성</h3>
-          <ul><li>한국 소재 동화 생성</li><li>독후활동 (놀이마당)</li><li>부모 대시보드</li></ul>
-        </article>
-        <article class="card card--line road">
-          <p class="road__phase">단기 · 경험 고도화</p>
-          <h3>더 풍부한 동화 경험</h3>
-          <ul><li>TTS 목소리 다양화</li><li>삽화 모션 애니메이션</li><li>취침 모드 (자동 다크 + 자장가 TTS)</li></ul>
-        </article>
-        <article class="card road road--future">
-          <p class="road__phase">장기 · 글로벌 확장</p>
-          <h3>세계의 문화 동화로</h3>
-          <ul><li>한국 구조를 각국 문화 소재로 교체</li><li>다국어 번역 인프라 활용</li><li>다국어 TTS 기반 확장</li></ul>
-        </article>
+    <!-- 09 SERVICE CONCEPT -->
+    <section class="slide slide--fit slide--cj" id="concept" data-idx="09" data-title="서비스 컨셉">
+      <div class="wrap cj">
+
+        <header class="cj__head">
+          <div class="rv">
+            <p class="eyebrow"><span>09</span>Service Concept</p>
+            <h2 class="cj__title">이야기를 만드는 순간부터<br />함께 읽고 기록하는 경험까지</h2>
+          </div>
+          <div class="cj__side rv" style="--d:.1s">
+            <p class="cj__desc">아이의 정보와 관심사를 바탕으로 이야기를 만들고,<br />감상과 독후활동, 부모의 기록까지 하나의 독서 경험으로 연결했습니다.</p>
+            <div class="cj__core">
+              <p class="kicker">Core Experience</p>
+              <ol class="cj__backbone" aria-label="Core experience">
+                <li>Input</li><li>Create</li><li>Read</li><li>Activity</li><li>Record</li>
+              </ol>
+            </div>
+          </div>
+        </header>
+
+        <!-- Journey: Node → Keyword → UI Preview → Title → Description -->
+        <ol class="cj__journey rv" style="--d:.16s">
+          <li style="--i:0">
+            <p class="cj__node"><span>01</span></p>
+            <p class="cj__key">Input</p>
+            <figure class="cj__shot" style="--pos: 50% 42%; --zoom: 1.35">
+              <img src="images/screen-create-input.png" alt="Story Studio 정보 선택 화면 — 주제와 한국형 모티브 선택" loading="lazy" />
+            </figure>
+            <h3>아이에게 맞는 이야기 설정</h3>
+            <p>이름 · 나이 · 주제 · 한국 소재 등<br />이야기에 필요한 정보를 선택합니다.</p>
+          </li>
+          <li style="--i:1">
+            <p class="cj__node"><span>02</span></p>
+            <p class="cj__key">Create</p>
+            <figure class="cj__shot" style="--pos: 50% 28%; --zoom: 1.2">
+              <img src="images/screen-create-loading.png" alt="AI 동화 생성 진행 화면 — 단계별 진행률과 삽화 생성" loading="lazy" />
+            </figure>
+            <h3>AI 맞춤 동화 생성</h3>
+            <p>입력한 정보를 바탕으로<br />이야기와 삽화를 생성합니다.</p>
+          </li>
+          <li class="is-key" style="--i:2">
+            <p class="cj__node"><span>03</span></p>
+            <p class="cj__key">Read</p>
+            <figure class="cj__shot" style="--pos: 45% 45%; --zoom: 1.08">
+              <img src="images/screen-viewer.png" alt="Story Viewer — 민준이의 용기있는 한복 여행" loading="lazy" />
+            </figure>
+            <h3>아이와 함께 감상</h3>
+            <p>완성된 동화를 읽거나 들으며<br />이야기에 몰입합니다.</p>
+          </li>
+          <li style="--i:3">
+            <p class="cj__node"><span>04</span></p>
+            <p class="cj__key">Activity</p>
+            <figure class="cj__shot" style="--pos: 50% 40%; --zoom: 1.15">
+              <img src="images/screen-play.png" alt="독후활동 화면 — 동화 장면 퍼즐 맞추기" loading="lazy" />
+            </figure>
+            <h3>이야기 이후의 활동</h3>
+            <p>읽은 이야기를 바탕으로 생각하고<br />표현하는 독후활동을 이어갑니다.</p>
+          </li>
+          <li style="--i:4">
+            <p class="cj__node"><span>05</span></p>
+            <p class="cj__key">Record</p>
+            <figure class="cj__shot" style="--pos: 20% 12%; --zoom: 1.5">
+              <img src="images/screen-parent.png" alt="부모 Dashboard — 어휘 성장 추이와 아이 프로필" loading="lazy" />
+            </figure>
+            <h3>부모의 기록 확인</h3>
+            <p>읽은 동화와 활동 기록을<br />부모 Dashboard에서 확인합니다.</p>
+          </li>
+        </ol>
+
+        <div class="cj__final rv" style="--d:.2s">
+          <p class="kicker">From input to record</p>
+          <p class="cj__message">하나의 이야기가 아이와 부모의 <strong>지속적인 독서 경험</strong>으로 이어집니다.</p>
+        </div>
+
       </div>
     </section>
 
-    <!-- 13 / 14 — 시연 -->
-    <section class="slide" id="s13" data-title="시연">
-      <header class="slide__head">
-        <p class="label">10 <b></b> 시연</p>
-        <h2 class="title title--link"><a href="https://jeongwoo-pjw.github.io/tori-story/" target="_blank" rel="noopener">jeongwoo-pjw.github.io/tori-story/</a></h2>
-        <p class="sub">실제 서비스 시연 플로우</p>
-      </header>
-      <ol class="slide__body flow">
-        <li><p class="flow__no">01</p><h3>홈 화면</h3><p>'10초만에 동화 만들기' 선택</p></li>
-        <li><p class="flow__no">02</p><h3>설정 입력</h3><p>민준 · 5세 / 주제 용기 / 소재 도깨비</p></li>
-        <li><p class="flow__no">03</p><h3>생성</h3><p>6단계 파이프라인 순차 진행</p></li>
-        <li><p class="flow__no">04</p><h3>동화 뷰어</h3><p>'읽어주기' 버튼으로 TTS 낭독</p></li>
-        <li class="flow__last"><p class="flow__no">05</p><h3>독후활동</h3><p>'독후활동 하기' → 놀이마당 연결</p></li>
-      </ol>
+    <!-- 10 주요 화면 ① — Reading Experience: 입력 · 생성 -->
+    <section class="slide slide--fit" id="s7" data-idx="10" data-title="디자인 ①">
+      <div class="wrap ks">
+        <header class="head">
+          <p class="eyebrow"><span>10</span>Reading Experience — Input &amp; Create</p>
+          <h2 class="title">이름·주제·소재를 고르면 완성되는 동화</h2>
+          <p class="sub">선택형·대화형 입력으로 맞춤 동화 생성</p>
+        </header>
+        <div class="body cols cols--3 screens ks__screens">
+          <figure>
+            <div class="ks__shot"><img src="images/screen-create-input.png" alt="선택형 만들기 화면 — 주인공 이름, 나이, 주제, 한국형 모티브, 그림체, 동화 분량 선택" loading="lazy" /></div>
+            <figcaption><span class="n">01</span><span class="ks__cap"><b>선택형 만들기</b>이름, 나이 등 간단 선택·입력으로 빠른 동화 생성</span></figcaption>
+          </figure>
+          <figure>
+            <div class="ks__shot"><img src="images/screen-create-chat.png" alt="대화형 만들기 화면 — 주인공·주제·그림체·동화 설정 단계별 대화 입력" loading="lazy" /></div>
+            <figcaption><span class="n">02</span><span class="ks__cap"><b>대화형 만들기</b>이름, 주제, 설정 등 심도있는 대화로 나만의 동화 생성</span></figcaption>
+          </figure>
+          <figure>
+            <div class="ks__shot"><img src="images/screen-create-loading.png" alt="동화 생성 중 화면 — 단계별 진행률, 삽화 생성, 안전 필터 결과" loading="lazy" /></div>
+            <figcaption><span class="n">03</span><span class="ks__cap"><b>동화 생성 중 화면</b>생성중인 과정을 시각적으로 표현해 지루함 감소</span></figcaption>
+          </figure>
+        </div>
+      </div>
     </section>
 
-    <!-- 14 / 14 — THANK YOU -->
-    <section class="slide slide--end" id="s14" data-title="THANK YOU">
-      <div class="end">
-        <span class="logo logo--end"><svg viewBox="0 0 24 24"><use href="#i-book"/></svg></span>
+    <!-- 10 주요 화면 ② — Reading Experience: Story Viewer -->
+    <section class="slide slide--fit slide--rx" id="viewer" data-idx="11" data-title="디자인 ②">
+      <div class="wrap rx">
+
+        <header class="rx__intro rv">
+          <p class="eyebrow"><span>11</span>Reading Experience — Read</p>
+          <h2 class="rx__title">아이의 시선이<br />이야기에 머물 수 있도록</h2>
+          <p class="rx__desc">읽기 화면의 정보와 기능 최적화</p>
+        </header>
+
+        <div class="rx__principle rv" style="--d:.12s">
+          <p class="kicker">Design Principle</p>
+          <p class="rx__principle-main">읽는 기능보다,<br />이야기에 집중할 수 있는 화면</p>
+          <p class="rx__principle-sub">삽화를 화면의 대부분으로 구성하고 본문은 연령별 최대 한도를 지정해 아이의 시선이 여러 정보로 분산되지 않도록 했습니다.</p>
+        </div>
+
+        <ol class="rx__features rv" style="--d:.2s">
+          <li>
+            <p class="rx__feat-head"><span class="rx__no">01</span><span class="rx__key">Focus</span><b>이야기에 집중</b></p>
+            <p>삽화를 화면의 70% 이상으로 구성하여 동화에 집중할 수 있도록 했습니다.</p>
+          </li>
+          <li>
+            <p class="rx__feat-head"><span class="rx__no">02</span><span class="rx__key">Age Limit</span><b>아이 맞춤 난이도</b></p>
+            <p>아이의 연령 단계에 맞춰 생성되는 본문 길이와 난이도를 조절했습니다.</p>
+          </li>
+          <li>
+            <p class="rx__feat-head"><span class="rx__no">03</span><span class="rx__key">Immersion</span><b>상황에 맞는 몰입</b></p>
+            <p>Bedtime Mode와 Cinema Mode를 통해 읽는 환경에 맞게 화면을 조절하고 이야기에 더욱 집중할 수 있도록 했습니다.</p>
+          </li>
+        </ol>
+
+        <!-- 실제 Story Viewer: 페이지의 주인공 -->
+        <div class="rx__stage">
+          <figure class="rx__viewer rv" style="--d:.3s">
+            <img src="images/story-viewer.png" alt="토리동화 Story Viewer — 민준이의 용기있는 한복 여행. 화면 대부분을 차지하는 수채화 삽화와 3~4줄의 본문, 상단의 좋아요·취침 모드·듣기·풀화면·텍스트 편집 버튼" />
+            <span class="rx__pin" style="--x: 30%; --y: 24%; --pd: .75s">1</span>
+            <span class="rx__pin" style="--x: 61.6%; --y: 49.5%; --pd: .85s">2</span>
+            <span class="rx__pin" style="--x: 74.6%; --y: 9.4%; --pd: .95s">3</span>
+            <span class="rx__pin" style="--x: 84%; --y: 9.4%; --pd: 1.05s">4</span>
+          </figure>
+          <ol class="rx__notes rv" style="--d:.7s" aria-label="Viewer 설계 주석">
+            <li><span class="rx__pin-no">1</span><p><b>Illustration 70%+</b>시각적 몰입</p></li>
+            <li><span class="rx__pin-no">2</span><p><b>Lines Limit</b>연령별 길이 조절</p></li>
+            <li><span class="rx__pin-no">3</span><p><b>Read Aloud · Auto Play</b>끊김 없는 감상</p></li>
+            <li><span class="rx__pin-no">4</span><p><b>Bedtime · Cinema</b>몰입 환경 설정</p></li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 12 BEYOND READING — ACTIVITY -->
+    <section class="slide slide--fit" id="activity" data-idx="12" data-title="디자인 ③">
+      <div class="wrap ks ks--activity">
+        <header class="head">
+          <p class="eyebrow"><span>12</span>Beyond Reading — Activity</p>
+          <h2 class="title">배움을 잇다, 읽은 뒤엔 놀이로</h2>
+          <p class="sub">AI가 자동생성한 다양한 독후활동 놀이</p>
+        </header>
+        <div class="body cols cols--3 screens ks__screens">
+          <figure>
+            <div class="ks__shot ks__shot--inset"><img src="images/activity-tabs.png" alt="독후활동 4종 탭 — 이해력 활동, 감정탐색, 창의력 활동, 어휘활동 카드" loading="lazy" /></div>
+            <figcaption><span class="n">01</span><span class="ks__cap"><b>독후활동 4종 탭</b>이해력, 감정탐색, 창의력, 어휘 활동으로 나누어 독후 활동 생성</span></figcaption>
+          </figure>
+          <figure>
+            <div class="ks__shot ks__shot--pad"><img src="images/screen-play.png" alt="참여형 활동 — 동화 장면 조각을 드래그해 그림을 완성하는 퍼즐" loading="lazy" /></div>
+            <figcaption><span class="n">02</span><span class="ks__cap"><b>참여형 활동</b>참여를 유도하고 흥미를 유발하는 독후 활동</span></figcaption>
+          </figure>
+          <figure>
+            <div class="ks__shot"><img src="images/activity-reward.png" alt="리워드 게임 — 블록깨기, 카드 뒤집기, 테트리스 미니게임" loading="lazy" /></div>
+            <figcaption><span class="n">03</span><span class="ks__cap"><b>리워드 게임</b>리워드 미니게임으로 독후 활동에 동기 부여</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13 VISUAL SYSTEM — RECORD: Parent Dashboard -->
+    <section class="slide slide--fit slide--dz" id="dashboard" data-idx="13" data-title="디자인 ④">
+      <div class="wrap dz">
+
+        <header class="dz__intro rv">
+          <p class="eyebrow"><span>13</span>Visual System — Record</p>
+          <h2 class="dz__title">아이의 독서 경험을<br />한눈에 들어오는 정보로</h2>
+          <p class="dz__desc">생성·활동 데이터 시각적 구성</p>
+        </header>
+
+        <div class="dz__principle rv" style="--d:.12s">
+          <p class="kicker">Design Principle</p>
+          <p class="dz__principle-main">기록을 나열하는 대신,<br />아이의 변화를 한눈에 이해하도록</p>
+          <p class="dz__principle-sub">정보의 중요도와 성격에 따라 카드의 크기와 시각화 방식을 다르게 구성했습니다.</p>
+        </div>
+
+        <!-- 핵심 정보 5가지: 정보 위계(PRIMARY / SECONDARY)로 묶음 -->
+        <div class="dz__info rv" style="--d:.2s">
+          <div class="dz__group">
+            <p class="dz__tier"><b>Primary</b>현재 상태와 성장</p>
+            <ol class="dz__list">
+              <li data-z="1"><p class="dz__item-head"><span class="dz__no">01</span><span class="dz__key">Child Profile</span></p><b>아이 프로필</b><p>나이·관심사·최근 감정을 태그로 확인</p></li>
+              <li data-z="2"><p class="dz__item-head"><span class="dz__no">02</span><span class="dz__key">Vocabulary Growth</span></p><b>어휘 성장</b><p>학습한 어휘 변화를 막대그래프로 비교</p></li>
+              <li data-z="3"><p class="dz__item-head"><span class="dz__no">03</span><span class="dz__key">Emotion Pattern</span></p><b>감정 패턴</b><p>감정 분포를 버블 크기로 비교</p></li>
+            </ol>
+          </div>
+          <div class="dz__group">
+            <p class="dz__tier"><b>Secondary</b>활동 기록</p>
+            <ol class="dz__list">
+              <li data-z="4"><p class="dz__item-head"><span class="dz__no">04</span><span class="dz__key">Reading History</span></p><b>독서 히스토리</b><p>읽은 동화와 독서 시간을 목록으로 확인</p></li>
+              <li data-z="5"><p class="dz__item-head"><span class="dz__no">05</span><span class="dz__key">Activity Summary</span></p><b>독후활동 기록 요약</b><p>활동 속 관심사와 학습 내용을 요약</p></li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- 실제 Parent Dashboard: 페이지의 가장 큰 Visual -->
+        <div class="dz__stage">
+          <figure class="dz__board rv" style="--d:.3s">
+            <img src="images/screen-parent.png" alt="토리동화 Parent Dashboard — 어휘 성장 추이, 아이 프로필, 자녀별 요약, 반복 요청 테마, 읽은 동화 히스토리, 집중 시간 설정, 감정 반응, 독서 리포트" />
+            <span class="dz__zone" data-z="1" style="--x: 70.8%; --y: 12.6%; --w: 25.3%; --h: 27.6%; --pd: 0.7s"><span class="dz__pin"><i>1</i>Profile</span></span>
+            <span class="dz__zone" data-z="2" style="--x: 3.1%; --y: 7.6%; --w: 65.2%; --h: 31.4%; --pd: 0.8s"><span class="dz__pin"><i>2</i>Vocabulary</span></span>
+            <span class="dz__zone" data-z="3" style="--x: 37.0%; --y: 71.6%; --w: 30.2%; --h: 25.6%; --pd: 0.9s"><span class="dz__pin"><i>3</i>Emotion</span></span>
+            <span class="dz__zone" data-z="4" style="--x: 70.8%; --y: 41.9%; --w: 25.3%; --h: 27.7%; --pd: 1.0s"><span class="dz__pin"><i>4</i>History</span></span>
+            <span class="dz__zone" data-z="5" style="--x: 3.1%; --y: 40.7%; --w: 32.5%; --h: 29.1%; --pd: 1.1s"><span class="dz__pin"><i>5</i>Activity</span></span>
+          </figure>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 11 BM 구조 -->
+    <section class="slide" id="s11" data-idx="14" data-title="BM 구조">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow"><span>14</span>Business Model — BM 구조</p>
+          <h2 class="title">프리미엄 구독 모델</h2>
+          <p class="sub">필요한 만큼, 더 깊게</p>
+        </header>
+        <div class="body cols cols--2 plans">
+          <article class="plan">
+            <p class="plan__name">Free</p>
+            <p class="plan__price">₩0</p>
+            <ul>
+              <li>제한적인 동화 생성</li>
+              <li>정적 삽화 · 기본 TTS</li>
+              <li>5~6페이지 분량 제한</li>
+              <li>책장 최대 3편 저장</li>
+            </ul>
+          </article>
+          <article class="plan plan--pick">
+            <p class="plan__name">Premium <span class="tag">추천</span></p>
+            <p class="plan__price">₩9,900<small>/ 월</small></p>
+            <ul>
+              <li>무제한 동화 생성</li>
+              <li>다양한 TTS 목소리</li>
+              <li>삽화 모션 애니메이션</li>
+              <li>고해상도 PDF 인쇄 · 저장</li>
+              <li>책장 무제한 저장</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 향후 계획 -->
+    <section class="slide" id="s12" data-idx="15" data-title="향후 계획">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow"><span>15</span>Roadmap — 향후 계획</p>
+          <h2 class="title">단기 고도화에서 글로벌 확장까지</h2>
+          <p class="sub">1차 MVP 이후 로드맵</p>
+        </header>
+        <ol class="body timeline">
+          <li class="is-now">
+            <p class="timeline__phase">NOW · 1차 MVP</p>
+            <h3>핵심 기능 완성</h3>
+            <ul><li>한국 소재 동화 생성</li><li>독후활동 (놀이마당)</li><li>부모 대시보드</li></ul>
+          </li>
+          <li>
+            <p class="timeline__phase">단기 · 경험 고도화</p>
+            <h3>더 풍부한 동화 경험</h3>
+            <ul><li>TTS 목소리 다양화</li><li>삽화 모션 애니메이션</li><li>취침 모드 (자동 다크 + 자장가 TTS)</li></ul>
+          </li>
+          <li class="is-goal">
+            <p class="timeline__phase">장기 · 글로벌 확장</p>
+            <h3>세계의 문화 동화로</h3>
+            <ul><li>한국 구조를 각국 문화 소재로 교체</li><li>다국어 번역 인프라 활용</li><li>다국어 TTS 기반 확장</li></ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 16 LEARNED -->
+    <section class="slide slide--fit slide--lr" id="learned" data-idx="16" data-title="마무리">
+      <div class="wrap lr">
+
+        <header class="lr__head">
+          <div class="rv">
+            <p class="eyebrow"><span>16</span>Learned</p>
+            <p class="kicker lr__small">What I learned</p>
+            <h2 class="lr__title">디자인에서 끝내지 않고,<br />실제로 작동하는 서비스까지</h2>
+          </div>
+          <p class="lr__desc rv" style="--d:.1s">토리동화는 기획부터 UI 디자인, AI를 활용한 구현과 배포까지 서비스가 실제로 만들어지는 과정을 경험한 프로젝트입니다. 직접 구현하는 과정에서 디자인 단계에서는 보이지 않았던 제약과 가능성을 이해하고, 디자인과 개발이 어떻게 연결되는지 배울 수 있었습니다.</p>
+        </header>
+
+        <ol class="lr__learnings">
+          <li class="rv" style="--d:.18s">
+            <p class="lr__meta"><span class="lr__no">01</span><span class="lr__key">Experience</span></p>
+            <h3>기능보다<br />전체 경험을 설계하기</h3>
+            <p>AI 맞춤 동화 생성 기능에서 시작했지만, 감상·독후활동·부모의 기록까지 이어지는 흐름을 함께 설계하며 사용자가 서비스를 이용하는 전체 경험을 바라보는 것이 중요하다는 것을 배웠습니다.</p>
+          </li>
+          <li class="rv" style="--d:.26s">
+            <p class="lr__meta"><span class="lr__no">02</span><span class="lr__key">Design → Development</span></p>
+            <h3>디자인을<br />실제 서비스로 구현하기</h3>
+            <p>Figma에서 설계한 화면을 Claude와 VS Code로 직접 구현하며, 반응형 레이아웃과 인터랙션, 데이터 연결까지 고려해 디자인과 개발 사이의 간극을 이해할 수 있었습니다.</p>
+          </li>
+          <li class="rv" style="--d:.34s">
+            <p class="lr__meta"><span class="lr__no">03</span><span class="lr__key">Collaboration</span></p>
+            <h3>다른 영역을 이해하며<br />함께 만드는 방법</h3>
+            <p>기획, 디자인, 개발이 서로 영향을 주고받는다는 것을 경험하며, 다른 영역을 이해하려는 노력이 더 원활한 협업과 현실적인 디자인으로 이어진다는 것을 배웠습니다.</p>
+          </li>
+        </ol>
+
+        <div class="lr__scope rv" style="--d:.1s">
+          <div class="lr__journey-wrap">
+            <p class="kicker">My Experience</p>
+            <ol class="lr__journey">
+              <li><p><b>Planning</b><span>서비스 구조</span></p></li>
+              <li><p><b>UX/UI Design</b><span>사용자 경험 · UI</span></p></li>
+              <li><p><b>Vibe Coding</b><span>Claude · VS Code</span></p></li>
+              <li><p><b>Implementation</b><span>React · TypeScript</span></p></li>
+              <li><p><b>Deployment</b><span>GitHub Pages</span></p></li>
+            </ol>
+          </div>
+          <dl class="lr__contrib">
+            <dt>Contribution <small>Team Project</small></dt>
+            <dd><span>Planning</span><em>50%</em></dd>
+            <dd><span>Design</span><em>100%</em></dd>
+            <dd><span>Development</span><em>50%</em></dd>
+          </dl>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 14 THANK YOU -->
+    <section class="slide slide--end is-dark" id="s14" data-idx="17" data-title="끝">
+      <div class="wrap end">
         <p class="end__eyebrow">상상이 이야기가 되는 곳</p>
-        <h2 class="end__title">THANK YOU</h2>
+        <h2 class="end__title">Thank you</h2>
         <p class="end__desc">아이의 첫 이야기, 토리동화와 함께 시작하세요.</p>
-        <p class="end__credit"><strong>발표자 한승우</strong><i>•</i>팀원 박정우, 이수현<i>•</i>토리동화 PRD v1.0 · 2026</p>
+        <dl class="end__credit">
+          <div><dt>Role</dt><dd>UX/UI Design · Planning<br />Vibe Coding</dd></div>
+          <div><dt>Contribution</dt><dd>Planning 50% · Design 100%<br />Development 50%</dd></div>
+          <div><dt>Output</dt><dd>Responsive Web Service<br /><a class="end__link" href="https://jeongwoo-pjw.github.io/tori-story/" target="_blank" rel="noopener">Live Website <i aria-hidden="true">↗</i></a></dd></div>
+        </dl>
       </div>
     </section>
 
   </main>
-
-  <!-- 공용 아이콘 -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="i-book" viewBox="0 0 24 24">
-      <path d="M4.5 6.2c2.4-.9 4.8-.7 6.8.6v11c-2-1.2-4.4-1.4-6.8-.6z" fill="currentColor"/>
-      <path d="M19.5 6.2c-2.4-.9-4.8-.7-6.8.6v11c2-1.2 4.4-1.4 6.8-.6z" fill="currentColor"/>
-    </symbol>
-  </svg>
 
   <script src="js/main.js"></script>
 </body>
